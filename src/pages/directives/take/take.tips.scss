@@ -1,0 +1,43 @@
+@import '../../../theme/my.scss';
+.take-tips{
+
+  width: 100%;
+  padding: calculateSize(15px) 0;
+  border-top: 1px solid #eee;
+  position: fixed;
+  bottom: calculateSize(100px);
+  background: #fff;
+  z-index: 2;
+
+  .soccer-count{
+    float: left;
+    display: flex;
+    height: calculateSize(68px);
+    align-items: center;
+    white-space: nowrap;
+  }
+  .clear-soccer{
+    flex: 0 calculateSize(78px);
+    height: calculateSize(38px);
+    margin: 0 calculateSize(40px);
+    img{
+      display: block;
+      width: calculateSize(38px);
+      height: calculateSize(38px);
+    }
+  }
+  .has-count{
+    font-size: 14px;
+  }
+  .count-tips{
+    font-size: calculateSize(22px);
+    color: #999;
+  }
+  .cofirm-count{
+    float: right;
+    padding-right: calculateSize(40px);
+  }
+
+
+
+}

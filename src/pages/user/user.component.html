@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <section class="user-cont">
+    <section class="user-name">
+      <img src="./assets/images/ic-touxiang.png" />
+      <p>{{appStore.state['user'].userName || appStore.state['user'].mobile}}</p>
+    </section>
+    <div class="price-column">
+      <div class="cash">
+        <em class="c-red">{{appStore.state['user'].cashAmount || 0}}</em>
+        <span>余额/元</span>
+      </div>
+      <div class="present">
+        <em class="c-red">{{appStore.state['user'].presentAmount}}</em>
+        <span>红包/元</span>
+      </div>
+    </div>
+    <div class="bg-box" *ngIf="!appStore.state['user'].rechargeSwitch"></div>
+    <div *ngIf="!appStore.state['user'].rechargeSwitch">
+      <div class="trans-price">
+        <div (click)="toOther('CZ')" tappable>充值</div>
+        <div class="bor"></div>
+        <div (click)="toOther('TX')" tappable>提现</div>
+      </div>
+    </div>
+    <div class="bg-box"></div>
+    <div class="">
+      <ul class="icon-list" icon-small>
+        <li (click)="toOther('FA')" tappable class="react">
+          <img src="./assets/images/ic-fangan.png" />
+          <span>方案</span>
+          <i class="icon-more"></i>
+        </li>
+        <li (click)="toOther('ZJMX')" tappable class="react">
+          <img src="./assets/images/ic-zijin.png"/>
+          <span>资金明细</span>
+          <i class="icon-more"></i>
+        </li>
+        <li (click)="toOther('SMRZ')" tappable class="react">
+          <img src="./assets/images/ic-shiming.png" />
+          <span>实名认证</span>
+          <i class="icon-more"></i>
+        </li>
+        <li (click)="toOther('GYWM')" tappable class="react">
+          <img src="./assets/images/ic-guanyu.png" />
+          <span>关于我们</span>
+          <i class="icon-more"></i>
+        </li>
+        <li (click)="call()" tappable class="react">
+          <img src="./assets/images/ic-kefu.png" />
+          <span>客服</span>
+          <span class="right-text">400-6666-780</span>
+        </li>
+
+      </ul>
+    </div>
+    <div class="bg-box"></div>
+    <div class="login-out" (click)="loginOut()">
+      <span>退出登录</span>
+    </div>
+    <div class="bg-box"></div>
+  </section>
+</ion-content>
+

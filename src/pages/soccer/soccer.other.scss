@@ -1,0 +1,92 @@
+@import '../../theme/my.scss';
+
+
+.other-header{
+  width: 100%;
+  height: calculateSize(92px);
+  font-size: 15px;
+  color: #111;
+  background-color: #FFE3C4;
+  position: fixed;
+  top: calculateSize(88px);
+  left:0;
+  z-index: 2;
+
+}
+.other-header  div{
+  flex: 1;
+}
+.other-header  div:nth-of-type(1){
+  text-align: right;
+}
+.other-header  div:nth-of-type(2){
+  flex: 0 calculateSize(260px);
+  text-align: center;
+  color: #888;
+}
+.soccer-other{
+  padding:calculateSize(88px) 0  calculateSize(124px);
+}
+
+/* ios */
+.platform-iphone{
+  .other-header{
+    top: 64px;
+  }
+}
+/* 玩法选择 begin*/
+.play-header{
+  height: calculateSize(80px);
+  padding: 0 calculateSize(30px);
+  line-height: calculateSize(80px);
+  background-color: #F4F4F4;
+  position: relative;
+  font-size: 13px;
+  color: #353535;
+}
+.play-header span{
+  font-size: 11px;
+  color: #888;
+}
+
+.play-body{
+  padding: calculateSize(20px) calculateSize(30px);
+  background: #fff;
+}
+.one-tit{
+  padding-bottom: calculateSize(6px);
+  font-size: 13px;
+  color: #b2b2b2;
+  line-height: calculateSize(38px);
+}
+.play-list{
+  margin-left: calculateSize(-20px);
+  overflow: hidden;
+}
+.play-list > div{
+  float: left;
+  margin: 0 0 calculateSize(20px) calculateSize(20px);
+}
+.play-btn{
+  width: calculateSize(118px);
+  padding-top: calculateSize(8px);
+  border: 1px solid #ccc;
+  border-radius: calculateSize(8px);
+  text-align: center;
+  font-size:  15px;
+  color: #666;
+  line-height: calculateSize(40px);
+}
+.play-btn div{
+  font-size: 12px;
+  color: #b2b2b2;
+}
+.play-btn.active{
+  border-color: $c-red;
+  color: $c-red;
+}
+.play-btn.active div{
+  color: $c-red;
+}
+/* 玩法 end*/
+

@@ -1,0 +1,741 @@
+@import '../theme/my.scss';
+body{
+  color: #333;
+  line-height: 1.4;
+}
+dd, dt, dl, ul, li, ol, p, h1, h2, h3, h4, h5{
+  margin: 0;
+  padding:0;
+}
+em{
+  font-style: normal;
+}
+img{
+  display: inline-block;
+  vertical-align: middle;
+}
+a{
+  text-decoration: none;
+  color: #353535;
+}
+a, button, input, textarea{
+  outline: none;
+}
+iframe{
+  border: none;
+}
+.fr{
+  flaot: right;
+}
+
+.fs-14{
+  font-size: 14px;
+}
+.fs-16{
+  font-size: 16px;
+}
+.fs-20{
+  font-size: 20px;
+}
+.c-red{
+  color: $c-red!important;
+}
+.c-green{
+  color: #45BF64!important;
+}
+
+.no-border{
+  border: none!important;
+}
+.align-center{
+  align-self: center;
+}
+.bg-white{
+  width: 100%;
+  background: #fff;
+}
+.c-blue{
+  color:#2F9BE1!important;
+}
+.mt-20{
+  margin-top: calculateSize(20px);
+}
+.pb-20{
+  padding-bottom: calculateSize(20px)!important;
+}
+.pl-15{
+  padding-left: calculateSize(15px)!important;
+}
+.react:active{
+  background: #f7f7f7!important;
+}
+.b-50{
+  bottom: calculateSize(50px);
+}
+
+.column{
+  display: flex;
+  align-items: center;
+}
+button {
+  position:relative;
+  display:block;
+  width: 100%;
+  margin-left:auto;
+  margin-right:auto;
+  box-sizing:border-box;
+  font-size:18px;
+  text-align:center;
+  text-decoration:none;
+  line-height:2.55555556;
+  border-radius:5px;
+  -webkit-tap-highlight-color:transparent;
+  overflow:hidden;
+  color:#000000;
+  background-color:#F8F8F8;
+
+}
+i[class^='icon'], [class^='icon'] {
+  display: inline-block;
+  vertical-align: middle;
+  background-size: cover;
+}
+
+.nothing{
+  padding-bottom: calculateSize(80px);
+  line-height: calculateSize(80px);
+  font-size: calculateSize(30px);
+  color: #999;
+  text-align: center;
+  background: #fff;
+}
+/* icon end*/
+.pb-70{
+  padding-bottom: calculateSize(140px);
+}
+/* 按钮 begin */
+
+.small-btn-160{
+  width: auto;
+  height: calculateSize(56px);
+  border: 1px solid #FB4D1B;
+  border-radius: calculateSize(8px);
+  line-height: calculateSize(54px);
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.small-btn{
+  width: calculateSize(114px);
+  height: calculateSize(54px);
+  border: 1px solid #FB4D1B;
+  border-radius: calculateSize(8px);
+  line-height: calculateSize(54px);
+  font-size: 15px;
+  color: #FB4D1B;
+  text-align: center;
+  white-space: nowrap;
+}
+.middle-btn{
+  width: calculateSize(150px);
+  height: calculateSize(68px);
+  border: 1px solid $c-red;
+  border-radius: calculateSize(8px);
+  line-height: calculateSize(68px);
+  font-size: 16px;
+  color: $c-red;
+  text-align: center;
+  white-space: nowrap;
+}
+.big-btn{
+  width: calculateSize(200px);
+  height: calculateSize(90px);
+  border: 1px solid $c-red;
+  border-radius: calculateSize(8px);
+  line-height: calculateSize(90px);
+  font-size: calculateSize(38px);
+  color: $c-red;
+  background: #fff;
+  text-align: center;
+  white-space: nowrap;
+  &[auto]{
+    width: 100%;
+  }
+}
+.btn-default{
+  border-color: #ccc;
+  color: #999;
+}
+.btn-primary{
+  background-color: $c-red;
+  color: #fff;
+}
+.btn-disabled{
+  background-color: #ccc;
+  color: #fff;
+  border-color: #ccc;
+}
+.btn-active{
+  border: 1px solid #FB4D1B!important;
+  color: $c-red!important;
+}
+/* 按钮 end */
+
+
+/* 开奖状态 end*/
+/*
+ * 数字彩
+*/
+.boll {
+  padding-left: calculateSize(8px);
+  margin-top: calculateSize(-20px);
+  overflow: hidden;
+}
+.boll div{
+  width: calculateSize(58px);
+  height: calculateSize(58px);
+  float: left;
+  margin: calculateSize(20px) calculateSize(20px) 0 0;
+  border: 1px solid #FB4D1B;
+  border-radius: calculateSize(58px);
+  line-height: calculateSize(58px);
+  text-align: center;
+  font-size: 16px;
+  color: #FB4D1B;
+  background-color: #fff;
+}
+.boll.distance-40 div{
+  margin-right: calculateSize(40px);
+}
+.boll div:last-child{
+  margin-right: 0;
+}
+.boll div.active{
+  background: #FB4D1B;
+  color: #fff;
+}
+.boll div.blue{
+  color: #32A5F4;
+  border-color:#32A5F4;
+}
+.boll div.blue.active{
+  background-color: #32A5F4;
+  border-color:#32A5F4;
+  color: #fff;
+}
+.boll-list{
+  padding: calculateSize(20px) 0 0 0;
+}
+.one-boll{
+  padding-top: calculateSize(10px);
+  padding-bottom: calculateSize(10px);
+  border-bottom: 1px dashed #e5e5e5;
+  overflow: hidden;
+}
+/** 号码头 begin*/
+.bonus-options{
+  display: flex;
+  justify-content: space-between;
+  margin: calculateSize(20px) 0 calculateSize(22px);
+}
+.bonus-options div{
+  line-height: calculateSize(40px);
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+}
+.bonus-options div:first-child{
+  flex: 1;
+}
+.bonus-options .text-left{
+  padding-left: calculateSize(110px);
+  text-align: left;
+}
+.b-options-price{
+  flex: calculateSize(142px) 0;
+}
+
+/* 复式 号码 begin*/
+.multiple-boll{
+  position: relative;
+}
+.boll-item{
+  padding-left: calculateSize(8px);
+  /*margin-bottom: -30px;*/
+}
+.boll-item .tit{
+  padding: calculateSize(10px) calculateSize(14px) calculateSize(10px) 0;
+  line-height: calculateSize(40px);
+  font-size: 14px;
+  color: #999;
+}
+.boll-item .boll{
+  overflow: hidden;
+  padding: calculateSize(10px) 0;
+}
+
+.boll-item:nth-of-type(2){
+  border-bottom: 1px dashed #e5e5e5;
+}
+
+/* 复式 号码 end*/
+
+/*底部按钮 begin
+*/
+.fixed-b-btns{
+  width: 100%;
+  padding: calculateSize(10px) calculateSize(90px);
+  border-top: 1px solid #ccc;
+  position: fixed;
+  left:0;
+  bottom:0;
+  background: #fff;
+  z-index: 2;
+}
+.bottom-btns-content{
+  @extend .fixed-b-btns;
+  display: flex;
+  padding: calculateSize(10px) calculateSize(30px);
+  background: #fff;
+  justify-content: space-between;
+  & > div{
+    flex: 0 calculateSize(330px);
+
+  }
+  button{
+    width: 100%;
+    &.btn-default{
+      color: #333;
+    }
+  }
+}
+
+
+/* 底部按钮 end*/
+.top-tips{
+  padding-left: calculateSize(60px);
+  margin-bottom: calculateSize(20px);
+  line-height: calculateSize(68px);
+  background: #FFF1C8;
+  font-size: calculateSize(24px);
+  color: #666;
+}
+
+
+
+
+/* 竞彩足球 begin*/
+.column-football{
+  display: flex;
+  height: calculateSize(64px);
+  width: 100%;
+  align-items: center;
+}
+.column-football div{
+  flex: 1;
+  font-size: 13px;
+  text-align: center;
+  white-space: nowrap;
+}
+.column-football div:nth-of-type(1){
+  flex: 0 20%;
+}
+.column-football div:nth-of-type(2){
+  flex: 0 5%;
+  text-align: left;
+
+}
+.column-football div:nth-of-type(3){
+  flex: 0 35%;
+
+}
+.column-football div:nth-of-type(4){
+  flex: 0 5%;
+}
+.column-football div:nth-of-type(5){
+  flex: 0 35%;
+
+}
+.column-football div:nth-of-type(6){
+  flex: 0 10%;
+  padding-right: calculateSize(10px);
+  text-align: right;
+}
+.football-options{
+  color: #B2B2B2;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.football{
+  border-bottom: 1px dashed #e5e5e5;
+  padding-bottom: calculateSize(20px);
+  position: relative;
+}
+.football .column-football{
+  height: calculateSize(64px);
+  color: #888;
+}
+
+.football-label{
+  width: calculateSize(560px);
+  overflow: hidden;
+}
+
+.football-label div{
+  float: left;
+  width: calculateSize(176px);
+  height: calculateSize(48px);
+  margin: calculateSize(6px) calculateSize(10px) calculateSize(10px) 0;
+  border: 1px solid rgba(50,165,244,.14);
+  line-height: calculateSize(48px);
+  background: rgba(50,165,244,.14);
+  border-radius: calculateSize(8px);
+  font-size: 15px;
+  text-align: center;
+  color: #353535;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.football-label div:nth-of-type(3n){
+  margin-right:0;
+}
+
+.football-label div.active{
+  background: rgba(251,77,27,.14);
+  border-color: #FB4D1B;
+  color: #FB4D1B;
+}
+.football-label div.active text{
+  color: #FF7F59;
+}
+.football-label div.disabled{
+  background: #F4F4F4;
+  border-color: #F4F4F4;
+  color:#9E9D9D;
+}
+.football-label div text{
+  font-size: 13px;
+  color: #888;
+}
+.football-label div.disabled text{
+  color: #B2B2B2;
+}
+.football-result{
+  position: absolute;
+  top: 50%;
+  right: calculateSize(0px);
+  transform: translateY(-50%);
+  line-height: calculateSize(40px);
+}
+.football-result .f-r-score{
+  font-size: 15px;
+  color: #353535;
+}
+.football-result .f-r-half-score{
+  font-size: 12px;
+  color: #888;
+}
+/* 竞彩足球 end*/
+
+///* 编辑 begin */
+//.edit-cont{
+//  background: #fff;
+//  padding: calculateSize(80px) calculateSize(40px) calculateSize(160px);
+//}
+//.edit-box{
+//  display: flex;
+//  align-items: center;
+//  padding-bottom: calculateSize(30px);
+//}
+//.edit-label{
+//  padding-right: calculateSize(20px);
+//  line-height: calculateSize(40px);
+//  font-size: 14px;
+//  color: #888;
+//  white-space: nowrap;
+//}
+///* 编辑 end*/
+//
+///* 排列三 and 五*/
+//.cell-num{
+//  padding: calculateSize(42px);
+//  border-bottom: 1px dashed #e5e5e5;
+//  margin-top: calculateSize(-22px);
+//  position: relative;
+//  text-align: center;
+//
+//}
+//.cell-num img{
+//  width: calculateSize(144px);
+//  height: calculateSize(144px);
+//}
+//.cell-num div{
+//  position: absolute;
+//  left: 50%;
+//  top: 50%;
+//  transform: translate(-50%, -50%);
+//  color: #FB4D1B;
+//  font-size: 20px;
+//}
+//.rank-box{
+//  display: flex;
+//  padding-bottom: calculateSize(20px);
+//  border-bottom: 1px dashed #e5e5e5;
+//  align-items: center;
+//}
+//.rank-digit{
+//  display: flex;
+//  align-items: center;
+//  margin-top: calculateSize(20px);
+//
+//}
+//.rank-digit > div:first-child{
+//  flex: 0 auto;
+//  padding-right: calculateSize(20px);
+//  line-height: calculateSize(40px);
+//  font-size: 14px;
+//  color: #999;
+//  white-space: nowrap;
+//}
+
+
+/**/
+//资金
+.price-column{
+  display: flex;
+  height: calculateSize(160px);
+  align-items: center;
+  & > div{
+    flex: 1;
+    text-align: center;
+    font-size: calculateSize(24px);
+    color: #999;
+    .c-red{
+      display: block;
+      margin: 0 auto;
+      line-height: calculateSize(45px);
+      font-size: calculateSize(40px);
+
+    }
+  }
+  .md-bor{
+    flex: 0 1px;
+    height: calculateSize(90px);
+    background: #ccc;
+  }
+
+}
+
+// 带图标的list
+.icon-list{
+  width: 100%;
+  li{
+
+    display: flex;
+    padding: calculateSize(20px) calculateSize(22px) calculateSize(20px) calculateSize(40px);
+    border-bottom: 1px solid #eee;
+    margin: 0;
+    align-items: center;
+    list-style: none;
+    font-size: calculateSize(32px);
+    color: #333;
+    position: relative;
+    img{
+      width: calculateSize(80px);
+      height: calculateSize(80px);
+      margin-right: calculateSize(40px);
+      vertical-align: middle;
+    }
+    span{
+      height: calculateSize(40px);
+      line-height: calculateSize(40px);
+      flex: 1;
+    }
+    .icon-more{
+      width: calculateSize(44px);
+      height: calculateSize(44px);
+      margin-left: calculateSize(10px);
+      position: static;
+      color: #666;
+      font-size: calculateSize(28px);
+      background-image: url(../assets/images/bt-next.png);
+      background-position: center;
+      background-size: calculateSize(88px);
+    }
+    .right-text{
+      padding-right: calculateSize(16px);
+      text-align: right;
+      color: #666;
+    }
+    &:last-child{
+      border: none;
+    }
+  }
+  &[icon-small]{
+    padding-left: calculateSize(40px);
+    li{
+      padding-left: 0;
+      color: #666;
+      font-size: calculateSize(30px);
+      img{
+        width: calculateSize(50px);
+        height: calculateSize(50px);
+      }
+    }
+  }
+
+  &[icon-no]{
+    padding-left:0;
+    li{
+      padding: calculateSize(24px)  calculateSize(14px) calculateSize(24px) calculateSize(30px);
+      font-size: calculateSize(30px);
+      justify-content: space-between;
+    }
+  }
+}
+.loading{
+  padding-bottom: calculateSize(800px);
+  line-height: calculateSize(50px);
+  text-align: center;
+  font-size: calculateSize(30px);
+  color: #999;
+  background: #fff;
+}
+/**/
+/*
+  * reset ionic css
+*/
+//ion-img{
+//  background: none;
+//}
+.has-refresher > .scroll-content{
+  border: none;
+}
+
+
+.toolbar{
+  .toolbar-title{
+    font-size: calculateSize(40px);
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+  }
+  .toolbar-background{
+    border: none!important;
+    background-image: linear-gradient(-167deg, #FF6E6B 0%, #FF5266 100%);
+  }
+  .back-button{
+    width: calculateSize(90px);
+    height: calculateSize(88px)!important;
+    line-height: calculateSize(88px);
+    min-height: calculateSize(88px)!important;
+    color: #fff!important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 12;
+    .back-button-icon {
+      font-size: 22px;
+    }
+  }
+}
+.platform-iphone{
+
+  .toolbar {
+    .back-button{
+      top: calculateSize(56px);
+    }
+  }
+}
+.alert-wrapper{
+  min-width: calculateSize(560px);
+  border-radius: calculateSize(8px)!important;
+  .alert-head{
+    padding: 30px 0 0;
+  }
+  .alert-title{
+    margin: 0;
+    text-align: center;
+    color: #333;
+  }
+  .alert-message{
+    padding: calculateSize(30px) calculateSize(30px) calculateSize(56px);
+    text-align: center;
+    color: #333;
+  }
+}
+
+.alert-button-group{
+  padding: calculateSize(20px) calculateSize(40px) calculateSize(22px) !important;
+  flex-wrap:nowrap !important;
+  border-top: 1px solid #E5E5E5;
+  justify-content: space-between!important;
+  button{
+    min-width: calculateSize(220px) !important;
+    flex: 0 calculateSize(220px) !important;
+    height: calculateSize(74px)!important;
+    line-height: calculateSize(74px) !important;
+    border: 1px solid $c-red!important;
+    background-color: $c-red!important;
+    margin: 0!important;
+    font-size: calculateSize(34px);
+    border-radius: calculateSize(8px)!important;
+    color: #fff!important;
+    &.cancel-btn{
+      border: 1px solid #ccc!important;
+      background-color: #fff!important;
+      color: #333!important;
+    }
+    .button-inner{
+      justify-content: center!important;
+    }
+    &.confirm-full{
+      flex: calculateSize(300px)!important;
+    }
+  }
+
+}
+.toast-message{
+  padding: calculateSize(10px)!important;
+  text-align: center;
+  font-size: calculateSize(20px)!important;
+}
+.infinite-loading-text{
+  font-size: calculateSize(30px);
+}
+.text-input{
+  margin-top: 11px!important;
+  &:valid ~ .text-input-clear-icon{
+    display: block;
+    z-index: 12;
+  }
+}
+.text-input-clear-icon{
+  width: calculateSize(50px)!important;
+  height: calculateSize(50px)!important;
+  top: calculateSize(16px)!important;
+  background-image: url(../assets/images/qingchu.png)!important;
+  background-size: cover!important;
+};
+.text-input[disabled]{
+  opacity: 1;
+}
+
+.loading-content{
+  font-size: 14px;
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+  bottom: 0;
+}
+::-webkit-scrollbar {
+  display: none !important;
+}
+.toast-wrapper{
+  max-width: calculateSize(300px);
+  min-height: calculateSize(70px);
+  line-height: calculateSize(70px);
+  .toast-message{
+    font-size: 16px!important;
+  }
+}

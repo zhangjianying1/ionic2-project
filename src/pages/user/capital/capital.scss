@@ -1,0 +1,73 @@
+capital-cont ion-content, programme-cont ion-content{
+  top: calculateSize(80px);
+  .scroll-content{
+    bottom: calculateSize(80px);
+  }
+}
+.tab-header{
+  display: flex;
+  width: 100%;
+  height: calculateSize(80px);
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+  background: #fff;
+  position: fixed;
+  top: calculateSize(88px);
+  left:0;
+  & > div{
+    height: calculateSize(79px);
+    min-height: calculateSize(79px);
+    line-height: calculateSize(79px);
+    flex: 1;
+    text-align: center;
+    font-size: calculateSize(30px);
+    color: #999;
+    &.active{
+      border-bottom: 1px solid $c-red;
+      color: #333;
+    }
+  }
+}
+.tab-cont{
+}
+.capital{
+  background: #fff;
+  .column{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: calculateSize(26px) calculateSize(30px);
+    border-bottom: 1px solid #eee;
+    .msg{
+      font-size: calculateSize(34px);
+      h2{
+        padding-bottom: calculateSize(10px);
+        font-size: calculateSize(34px);
+        color: #333;
+      }
+      em{
+        color: #666;
+        font-size: calculateSize(26px);
+      }
+    }
+    .price{
+      text-align: right;
+      time{
+        display: block;
+        font-size: calculateSize(24px);
+        color: #999;
+      }
+      em{
+        display: block;
+        padding-top: calculateSize(18px);
+        color: #333;
+        font-size: calculateSize(34px);
+      }
+    }
+  }
+}
+.platform-ios {
+  .tab-header{
+    top: 64px;
+  }
+}

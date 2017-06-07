@@ -1,0 +1,100 @@
+.calender{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,.4);
+  top:0;
+  left:0;
+  z-index: 8;
+  .slide-in-up{animation:slideInUp .2s ease-in;-webkit-animation:slideInUp .2s ease-in}
+  .active{
+    animation: show-bg .2s ease .2s 1; -webkit-animation: show-bg .2s ease .2s 1;
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards
+  }
+  .calender-flex{
+    width: 100%;
+    height: calculateSize(520px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    z-index: 9;
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    -webkit-animation-fill-mode : forwards;
+    animation-fill-mode : forwards
+  }
+  .calender-box{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    background: #fff;
+  }
+  .calender-body{
+
+    display: flex;
+    height: calculateSize(360px);
+    -webkit-mask:-webkit-gradient(linear, 0% 50%, 0% 100%, from(#debb47), to(rgba(36,142,36,0)));
+    overflow: hidden;
+    .mask{
+      display: flex;
+      width: 100%;
+      -webkit-mask:-webkit-gradient(linear, 0% 50%, 0% 0%, from(#debb47), to(rgba(36,142,36,0)));
+    }
+    .calender-date{
+      height: calculateSize(360px);
+      flex: 1;
+      display: flex;
+      position: relative;
+      .bor-box{
+        width: 100%;
+        height: calculateSize(72px);
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .clumn{
+        flex: 1;
+      }
+      li{
+        height: calculateSize(72px);
+        line-height: calculateSize(72px);
+        text-align: center;
+        color: #999;
+        font-size: calculateSize(40px);
+        list-style: none;
+        padding: 0;
+        &.active{
+          color: #333;
+        }
+      }
+    }
+  }
+  .calender-header{
+    height: calculateSize(88px);
+    display: flex;
+    padding: 0 .3rem;
+    border-bottom: 1px solid #d2d2d2;
+    align-items: center;
+    background: #fff;
+    h2{
+      flex:1;
+      text-align: center;
+      color: #897FE6;
+    }
+  }
+}
+
+@-webkit-keyframes slideInUp{
+  from{-webkit-transform:translate3d(0, 100%, 0);transform:translate3d(0, 100%, 0)}
+  to{-webkit-transform:translate3d(0, 0%, 0);transform:translate3d(0, 0%, 0);}
+}
+
+@-webkit-keyframes show-bg{
+  from{background: rgba(0 , 0 , 0 , 0);}
+  to{background: rgba(0 , 0 , 0 , .8);}
+}

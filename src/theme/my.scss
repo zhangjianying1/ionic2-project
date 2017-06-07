@@ -1,0 +1,5 @@
+$old: 75px;
+$c-red: #FC5A65;
+@function calculateSize($px) {
+  @return ($px/$old) * 1rem;
+}

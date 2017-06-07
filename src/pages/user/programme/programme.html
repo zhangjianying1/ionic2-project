@@ -1,0 +1,105 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>方案</ion-title>
+  </ion-navbar>
+  <section class="tab-header" [ngClass]="pos ? 'fixed' : ''">
+    <div (click)="tabSelect(0)" [ngClass]="index == 0 ? 'active': ''">全部</div>
+    <div (click)="tabSelect(1)" [ngClass]="index == 1 ? 'active': ''">待开奖</div>
+    <div (click)="tabSelect(2)" [ngClass]="index == 2 ? 'active': ''">已中奖</div>
+  </section>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <section class="tab-cont">
+    <section *ngIf="index == 0" >
+      <section class="programme">
+        <div class="nothing" *ngIf="state['0'].nothing">没有相关数据</div>
+        <div class="nothing" *ngIf="!state['0'].data">加载中...</div>
+        <div class="" *ngFor="let item of state['0'].data; let index=index" (click)="goMore(item.programsOrderId)">
+          <div class="bg-box" *ngIf="index > 0"></div>
+          <div class="pro-box">
+            <h3 *ngIf="item.bonusStatus == 2">未中奖</h3>
+            <h3 class="c-red" *ngIf="item.bonusStatus == 1">奖金:{{item.bonusAmount + item.awardAmount}}</h3>
+            <h3 *ngIf="item.bonusStatus == 0">{{item.bonusTime | transData}} 开奖</h3>
+            <div class="column">
+              <img src="./assets/images/{{item.playId}}.png"/>
+              <div class="msg">
+                <h4>{{item.playName}}</h4>
+                <time>投注时间: {{item.createTime}}</time>
+              </div>
+              <div class="bonus-price">
+                <em>¥ {{item.orderAmount}}元</em>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </section>
+    <section *ngIf="index == 1" >
+      <section class="programme">
+        <div class="nothing" *ngIf="state['1'].nothing">没有相关数据</div>
+        <div class="nothing" *ngIf="!state['1'].data">加载中...</div>
+        <div class="" *ngFor="let item of state['1'].data; let index=index" (click)="goMore(item.programsOrderId)">
+          <div class="bg-box" *ngIf="index > 0"></div>
+          <div class="pro-box">
+            <h3 *ngIf="item.bonusStatus == 2">未中奖</h3>
+            <h3 class="c-red" *ngIf="item.bonusStatus == 1">奖金:{{item.bonusAmount + item.awardAmount}}</h3>
+            <h3 *ngIf="item.bonusStatus == 0">{{item.bonusTime | transData}} 开奖</h3>
+            <div class="column">
+              <img src="./assets/images/{{item.playId}}.png"/>
+              <div class="msg">
+                <h4>{{item.playName}}</h4>
+                <time>投注时间: {{item.createTime}}</time>
+              </div>
+              <div class="bonus-price">
+                <em>¥ {{item.orderAmount}}元</em>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+    </section>
+    <section *ngIf="index == 2" >
+      <section class="programme">
+        <div class="nothing" *ngIf="state['2'].nothing">没有相关数据</div>
+        <div class="nothing" *ngIf="!state['2'].data">加载中...</div>
+        <div class="" *ngFor="let item of state['2'].data; let index=index" tappable (click)="goMore(item.programsOrderId)">
+          <div class="bg-box" *ngIf="index > 0"></div>
+          <div class="pro-box">
+            <h3 *ngIf="item.bonusStatus == 2">未中奖</h3>
+            <h3 class="c-red" *ngIf="item.bonusStatus == 1">奖金:{{item.bonusAmount + item.awardAmount}}</h3>
+            <h3 *ngIf="item.bonusStatus == 0">{{item.bonusTime | transData}} 开奖</h3>
+            <div class="column">
+              <img src="./assets/images/{{item.playId}}.png"/>
+              <div class="msg">
+                <h4>{{item.playName}}</h4>
+                <time>投注时间: {{item.createTime}}</time>
+              </div>
+              <div class="bonus-price">
+                <em>¥ {{item.orderAmount}}元</em>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </section>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" ionInfinite="8%" *ngIf="isFiniteScroll">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      充值
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <section class="recharge-page">
+    <div class="price-column" *ngIf="appStore.state['user']">
+      <div class="cash">
+        <em class="c-red">{{appStore.state['user'].cashAmount || 0}}</em>
+        <span>余额/元</span>
+      </div>
+      <div class="md-bor"></div>
+      <div class="present">
+        <em class="c-red">{{ appStore.state['user'].presentAmount || 0}}</em>
+        <span>红包/元</span>
+      </div>
+    </div>
+    <div class="bg-box"></div>
+    <div class="">
+      <ul class="icon-list">
+        <!--<li (click)="toRecharge('wx')" class="react">-->
+          <!--<img src="./assets/images/recharge/weixin.png" />-->
+          <!--<span>微信支付</span>-->
+          <!--<i class="icon-more"></i>-->
+        <!--</li>-->
+        <li tappable (click)="toRecharge('zfb')" class="react">
+          <img src="./assets/images/recharge/zhifubao.png"/>
+          <span>支付宝</span>
+          <i class="icon-more"></i>
+        </li>
+      </ul>
+    </div>
+  </section>
+</ion-content>

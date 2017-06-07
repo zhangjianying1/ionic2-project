@@ -1,0 +1,89 @@
+.bottom-mark{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  bottom: calculateSize(120px);
+  background: rgba(0,0,0,.6);
+  z-index:222222;
+}
+
+/* 过关方式 begin*/
+.fixed-bottom-shut, .fixed-bottom-multiple{
+  width: 100%;
+  position: fixed;
+  bottom: calculateSize(190px);
+  left:0;
+  background: #fff;
+  z-index: 222223;
+
+}
+.shut-cont{
+  padding: calculateSize(20px) calculateSize(30px) calculateSize(30px);
+}
+.shut-cont .shut-tit{
+  padding-bottom: calculateSize(4px);
+  line-height: calculateSize(38px);
+  font-size: 13px;
+  color: #b2b2b2;
+}
+.shut-list{
+  margin-right: calculateSize(-30px);
+  overflow: hidden;
+}
+.shut-list div{
+  width: calculateSize(146px);
+  margin-right: calculateSize(30px);
+  margin-bottom: calculateSize(16px);
+  float: left;
+}
+.icon-bottom{
+  width: calculateSize(16px);
+  height: calculateSize(16px);
+  position: absolute;
+  left: 50%;
+  bottom: calculateSize(-14px);
+  background: #fff;
+  transform: rotate(45deg) translateY(-50%);
+
+}
+/* 过关方式 end*/
+
+/* 倍数选择 begin*/
+
+.multiple-list{
+  display: flex;
+  justify-content: space-between;
+  padding: calculateSize(14px) calculateSize(60px);
+}
+.multiple-list div{
+  width: calculateSize(116px);
+}
+.number-keyboard{
+  overflow:hidden;
+  margin-left: calculateSize(-2px);
+}
+.number-keyboard div{
+  width: 33.33333%;
+  height: calculateSize(106px);
+
+  border-top: 1px solid #c0c0c0;
+  float: left;
+  text-align: center;
+  line-height: calculateSize(106px);
+  font-size: 27px;
+  color: #1c1c1c;
+  &:nth-of-type(3n-1) {
+    border-left: 1px solid #c0c0c0;
+    border-right: 1px solid #c0c0c0;
+  }
+}
+.number-keyboard div.confirm-btn, .number-keyboard div.icon-del-back{
+  background-color: #E7E7EB;
+  font-size: calculateSize(40px);
+
+}
+.number-keyboard div.icon-del-back img{
+  width: calculateSize(53px);
+  height: calculateSize(39px);
+}
+/* 倍数选择 end*/

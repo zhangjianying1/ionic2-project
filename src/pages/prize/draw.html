@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      提现
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="recharge-input">
+
+    <div class="my-input">
+      <div class="input-label" auto>金额</div>
+      <ion-input type="tel" placeholder={{placeholder}} [(ngModel)]="price" clearInput required></ion-input>
+    </div>
+
+    <div class="recharge-btn">
+      <button class="big-btn " [ngClass]="price? 'btn-primary' : 'btn-disabled'" auto (click)="drawHandle()" tappable>提交</button>
+    </div>
+
+    <section>
+      <dl class="recharge-tips">
+        <dt>提现说明</dt>
+        <dd>1.100元以下提现将按照实际费率收取手续费，100元以上（含100元）不收取手续费。</dd>
+        <dd>2.可提现金额为用户投注中奖奖金，充值的本金只能消费</dd>
+        <dd>3.最低提现金额为20元整</dd>
+        <dd>4.红包账户金额只能消费不能提现</dd>
+        <dd>5.每日提现申请次数上限为5次，超过将不予处理</dd>
+        <dd>6.提现申请将在30分钟内处理，具体到账时间以银行实际到账为
+        准(节假日期间部分银行可能会延迟到账)</dd>
+        <dd></dd>
+      </dl>
+    </section>
+  </div>
+</ion-content>
+
+
+
+
+

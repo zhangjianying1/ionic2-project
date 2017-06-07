@@ -1,0 +1,62 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+        "spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+        "type": "directory"
+      },
+      "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/node_modules"
+    ]
+  ],
+  "_from": "myPlugins/umeng_plugin",
+  "_id": "umeng_plugin@3.0.0",
+  "_inCache": true,
+  "_location": "/umeng_plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+    "spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:myPlugins/umeng_plugin",
+  "_shasum": "253c55dfdfd26781b968487aede934a52bc7ed2d",
+  "_shrinkwrap": null,
+  "_spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/umeng_plugin",
+  "_where": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/node_modules",
+  "author": {
+    "name": "umeng"
+  },
+  "cordova": {
+    "id": "Umeng",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "umeng analytics plugin",
+  "devDependencies": {},
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "ISC",
+  "name": "umeng_plugin",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "3.0.0"
+}

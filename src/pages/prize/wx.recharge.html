@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      微信充值
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="recharge-cont">
+    <div class="recharge-input">
+
+      <div class="my-input">
+        <div class="input-label" auto>充值金额</div>
+        <ion-input type="tel" placeholder="请输入充值金额" [(ngModel)]="price" clearInput="true" required></ion-input>
+      </div>
+
+      <div class="recharge-btn">
+        <button class="big-btn " [ngClass]="price? 'btn-primary' : 'btn-disabled'" auto (click)="rechargeHandle()">充值</button>
+      </div>
+
+      <section>
+        <dl class="recharge-tips">
+          <dt>充值声明</dt>
+          <dd>1.充值“0”手续费</dd>
+          <dd>2.充值金额仅限消费，不可直接提现</dd>
+          <dd>3.充值完成后，款项实时到账</dd>
+        </dl>
+      </section>
+    </div>
+
+
+  </div>
+
+</ion-content>
+<section class="concat-sevice">
+  <p>如充值未及时到账</p>
+  <p>请联系客服：<em class="c-red">400-6666-780</em></p>
+</section>

@@ -1,0 +1,34 @@
+<section>
+  <div class="fixed-bottom-view">
+    <div class="bottom-view-header column">
+      <div *ngIf="isOnePass">
+        <div class="tag-box no-bor">
+          单关
+        </div>
+      </div>
+      <div (click)="showView('cross')" tappable *ngIf="!isOnePass">
+        <div [ngClass]="programmeData.cross.active ? 'tag-box  active' : 'tag-box '">
+          {{programmeData.cross.name}}<div class="icon-tag"></div>
+        </div>
+      </div>
+      <div (click)="showView('multiple')" tappable>
+        <div [ngClass]="programmeData.multiple.active ? 'tag-box  active' : 'tag-box '">
+          {{programmeData.multiple.name}}倍
+          <div class="icon-tag"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-view-body column">
+      <div class="price">
+        <div>金额: {{programmeData.bonus.amount}} 元</div>
+        <div>最高理论奖金: <span class="fs-16 c-red">{{programmeData.bonus.bonus}}</span>元</div>
+      </div>
+      <div>
+        <button (click)="commit()" tappable class="big-btn btn-primary">购买</button>
+      </div>
+    </div>
+
+  </div>
+  <cross></cross>
+  <keyboard></keyboard>
+</section>

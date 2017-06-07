@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      实名认证
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="top-tips">
+    请绑定实名用户的储蓄卡(<em class="c-red">请勿绑定信用卡</em>),否则将提现无效
+  </div>
+  <div class="bank-cont">
+    <div class="my-input">
+      <div class="input-label" auto>银行卡号</div>
+      <ion-input type="tel" placeholder="请输入银行卡号" [(ngModel)]="bank.bankCard" clearInput="true" required></ion-input>
+    </div>
+    <div class="my-input">
+      <div class="input-label" auto>开户银行</div>
+      <ion-input type="tel" (click)="pickerHandle()" placeholder="请选择开户银行" [(ngModel)]="bank.bankName" disabled></ion-input>
+    </div>
+    <div class="recharge-btn">
+      <button class="big-btn " [ngClass]="bank.bankCard && bank.bankName ? 'btn-primary' : 'btn-disabled'" auto tappable (click)="confirmHandle()">提交</button>
+    </div>
+  </div>
+</ion-content>
+
+<picker *ngIf="isShow" [data]="bankData" [value]="bank.bankName" [callback]="selectHandle.bind(this)" [closeHandle]="pickerHandle.bind(this)"></picker>

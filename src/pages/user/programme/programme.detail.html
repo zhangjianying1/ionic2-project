@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      方案详情
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll>
+  <div class="order-payment">
+    <section class="card" *ngIf="programmeData.match">
+      <div class="card-header">
+        <h2>订单信息</h2>
+        <span *ngIf="programmeData.programs.orderStatus == 1" class="c-green">出票成功</span>
+        <span *ngIf="programmeData.programs.orderStatus == 2" class="c-red">出票失败</span>
+        <span *ngIf="programmeData.programs.orderStatus == 0" class="c-blue">待出票</span>
+      </div>
+      <div>
+        <div class="o-c-list">
+          <div>
+            <span>投注时间:</span><span>{{programmeData.order.createTime}}</span>
+          </div>
+          <div>
+            <span>订单编号:</span><span>{{programmeData.programs.programsOrderId}}</span>
+          </div>
+          <div>
+            <span>玩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法:</span>
+             <span>
+            {{programmeData.programs.playName}}
+          </span>
+          </div>
+          <div>
+            <span>过关方式:</span>
+
+             <span>
+              {{programmeData.match.passModel}}
+            </span>
+          </div>
+          <div>
+            <span>注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</span><span>{{programmeData.programs.multiple}}</span>
+          </div>
+          <div>
+            <span>投注倍数:</span><span>{{programmeData.programs.multiple}}</span>
+          </div>
+          <div>
+            <span>投注金额:</span><span class="c-red">¥ {{programmeData.programs.buyAmount}}</span>
+          </div>
+          <div *ngIf="programmeData.programs.orderStatus == 0">
+            <span>预计奖金:</span><span class="c-red">¥ {{programmeData.programs.expectBonus}}</span>
+          </div>
+          <div *ngIf="programmeData.programs.bonusStatus == 1">
+            <span>中奖金额:</span><span class="c-red">¥ {{programmeData.order.bonusAmount + programmeData.programs.awardAmount}}</span>
+          </div>
+          <div *ngIf="programmeData.programs.bonusStatus == 2">
+            <span>中奖金额:</span><span class="c-red">未中奖</span>
+          </div>
+          <div *ngIf="programmeData.programs.awardAmount">
+            <span>其中加奖:</span><span class="c-red">¥ {{programmeData.programs.awardAmount}}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="bg-box"></div>
+    <section class="card" *ngIf="programmeData.match">
+      <div class="card-header">
+        <h2>投注内容</h2>
+      </div>
+      <div>
+        <dl class="o-c-options">
+          <dt class="column">
+            <span>场次</span>
+            <span>对阵</span>
+            <span>选项</span>
+          </dt>
+          <dd  *ngFor="let match of programmeData.match.matchList">
+            <div >
+              <div class="column">
+                <span>{{match.week}}{{match.sn}}</span>
+                <span>{{match.mainTeam  | strellipsis:5}}<code *ngIf="match.mainTeamScore == undefined">VS</code><code class="c-red" *ngIf="match.mainTeamScore != undefined">{{match.mainTeamScore}}-{{match.guestTeamScore}}</code>{{match.guestTeam | strellipsis:5}}</span>
+              <span>
+                <div *ngFor="let itemList of match.playList">
+                  <em *ngFor="let item of itemList.termList" [ngClass]="item.checked == 1 ? 'c-red' : '' ">{{itemList.letBall ? '让球' : ''}}{{item.name}}<span class="c-f3" *ngIf="item.plusResult > 0 || item.sp > 0"> {{item.plusResult || item.sp}}</span></em>
+                </div>
+              </span>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </section>
+  </div>
+</ion-content>

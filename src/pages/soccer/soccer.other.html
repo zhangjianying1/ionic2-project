@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      更多玩法
+    </ion-title>
+  </ion-navbar>
+  <div class="other-header column">
+    <div class="">{{soccerResult.mainTeam | strellipsis:5}}</div>
+    <div class="">VS</div>
+    <div class="">{{soccerResult.guestTeam | strellipsis:5}}</div>
+  </div>
+  <div class="bottom-btns-content">
+    <div>
+      <button (click)="confirm()" tappable class="big-btn btn-default">取消</button>
+    </div>
+    <div>
+      <button class="big-btn btn-primary" (click)="confirm(1)" tappable>确定</button>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content>
+
+<div class="soccer-other" >
+
+
+  <div class="play-cont">
+
+    <div *ngFor="let list of soccerResult.dataList; let index=index;">
+      <div class="soccer-header play-header " (click)="toggleShow(index)">
+        {{list.name}}<span>（可投单关）</span>
+        <div [ngClass]="!list.active ? 'icon-more  open' : 'icon-more '"></div>
+      </div>
+      <div class="play-body" *ngIf="list.active">
+        <div *ngIf="index == 0">
+          <div *ngFor="let score of list.data; let j=index;">
+            <div class="one-tit">{{j == 0 ? '胜' : j == 1 ? '平' : j == 2 ? '负' : ''}}</div>
+            <div class="play-list">
+
+              <div *ngFor="let item of score; let h=index" [ngClass]="item.active ? 'play-btn active' : 'play-btn '"
+                   (click)="selectResult(index, j, h, soccerResult.issue, soccerResult.totalGoalsSingle, item.sp, '', soccerResult.sn, 'scoreSp', item.name, item.value, soccerResult.mainTeam, soccerResult.guestTeam, soccerResult.week, '04')" >
+                {{item.name}}
+                <div>{{item.sp}}</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <div class="play-list" *ngIf="index == 1">
+
+          <div *ngFor="let item of list.data; let j=index;" [ngClass]="item.active ? 'play-btn active' : 'play-btn '"
+               tappable
+               (click)="selectResult(index, -1, j, soccerResult.issue, soccerResult.totalGoalsSingle, item.sp, '', soccerResult.sn, 'totalGoalsSp',item.name, item.value, soccerResult.mainTeam, soccerResult.guestTeam, soccerResult.week, '02')">
+            {{item.name}}
+            <div>{{item.sp}}</div>
+          </div>
+        </div>
+        <div class="play-list" *ngIf="index == 2">
+
+          <div *ngFor="let item of list.data; let j=index;" [ngClass]="item.active ? 'play-btn active' : 'play-btn '"
+               tappable
+               (click)="this.selectResult(index, -1, j, soccerResult.issue, soccerResult.halfFullSingle, item.sp, '', soccerResult.sn, 'halfFullSp', item.name, item.value, soccerResult.mainTeam, soccerResult.guestTeam, soccerResult.week, '03')">
+            {{item.name}}
+            <div>{{item.sp}}</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</div>
+
+
+</ion-content>

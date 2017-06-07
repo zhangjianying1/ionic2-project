@@ -1,0 +1,25 @@
+<div [ngStyle]="{position: 'relative'}" *ngIf="takeService._programmeData.cross.active">
+
+  <div class="bottom-mark" (click)="closeView()">
+
+  </div>
+  <div class="fixed-bottom-shut" >
+    <div class="shut-cont">
+      <div>
+        <div class="shut-tit">过关方式</div>
+        <div class="shut-list">
+          <div *ngFor="let item of takeService._crossData.data[0]; let index=index" [ngClass]="item.active ? 'middle-btn ' : 'middle-btn  btn-default'"
+               (click)="selectCross(item.name, 0, index)">{{item.name}}</div>
+        </div>
+      </div>
+
+      <div *ngIf="takeService._crossData.data.length > 1">
+        <div class="shut-tit">多串过关</div>
+        <div class="shut-list">
+          <div *ngFor="let item of takeService._crossData.data[1]; let index=index" [ngClass]="item.active ? 'middle-btn ' : 'middle-btn  btn-default'"
+               (click)="selectCross(item.name, 1, index)">{{item.name}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

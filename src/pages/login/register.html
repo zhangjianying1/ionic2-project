@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      注册
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <section class="login">
+
+    <div class="my-input">
+      <div class="input-label"><i class="icon-mobile"></i></div>
+      <ion-input type="text" placeholder="请输入手机号" [(ngModel)]="login.mobile" clearInput="true" required></ion-input>
+    </div>
+
+    <div class="my-input">
+      <div class="input-label"><i class="icon-password"></i></div>
+      <ion-input type="password" placeholder="请设置6-20个字符的密码" [(ngModel)]="login.password" clearInput="true" required></ion-input>
+    </div>
+    <div class="my-input">
+      <div class="input-label"><i class="icon-repeat-password"></i></div>
+      <ion-input type="password" placeholder="请再次输入密码" [(ngModel)]="login.repeatPassword" clearInput="true" required></ion-input>
+    </div>
+    <div class="my-input">
+      <div class="input-label"><i class="icon-code"></i></div>
+      <ion-input type="tel" placeholder="请输入验证码" [(ngModel)]="login.code" clearInput="true" required></ion-input>
+      <button class="small-btn-160 btn-active" (click)="getCode()" *ngIf="!login.isSendCode">点击获取</button>
+      <button class="small-btn-160 btn-default"  *ngIf="login.isSendCode">重发验证码</button>
+    </div>
+    <div class="login-btns">
+      <button class="big-btn " [ngClass]="login.mobile && login.password && login.repeatPassword && login.code ? 'btn-primary' : 'btn-disabled'" auto (click)="registerHandle()">注册</button>
+    </div>
+  </section>
+</ion-content>

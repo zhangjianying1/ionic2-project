@@ -1,0 +1,49 @@
+<section *ngFor="let match of matchList; let index=index" >
+
+
+<div class="soccer-header" (click)="toggleShow(index)" *ngIf="match.matchTotal>0">
+  {{match.date}}
+  <span>共{{match.matchTotal}}场</span>
+  <div class="icon-more" [ngClass]="match.active ? 'open' : ''"></div>
+</div>
+<div class="soccer-body" *ngIf="match.active" >
+
+    <div  *ngFor="let match of match.match; let i=index" >
+      <div *ngIf="!match.isHide">
+        <div class="soccer-number">
+          <div>
+            <i class="icon-game"></i>
+            {{match.key}} {{match.matchName}}<span class="pl-15">{{match.endTime}} 截止</span>
+          </div>
+        </div>
+
+        <div class="soccer-team">
+          <div class="column">
+            <div class="soccer-name">{{match.mainTeam}}</div>
+            <div class="soccer-name">VS</div>
+            <div class="soccer-name">{{match.guestTeam}}</div>
+          </div>
+          <div class="column" *ngIf="match.spfSingle == -1 || match.spfOne !=1">
+            <div *ngFor="let item of match.spfSp; let j=index"
+                 tappable
+                  (click)="selectResult(index, i, j, match.issue, match.spfSingle, item.sp, '', match.sn, 'spfSp', item.name, match.mainTeam, match.guestTeam, match.week, '05')" class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+              {{item.name}}<span> {{item.sp}}</span></div>
+            <img src="./assets/images/danguan.png" class="soccer-shut" *ngIf="match.spfSingle == 1"/>
+          </div>
+          <div class="column" *ngIf="match.rqspfSingle == -1 || match.spfOne !=1">
+            <div *ngFor="let item of match.rqspfSp; let j = index"
+                 tappable
+                 (click)="selectResult(index, i, j, match.issue, match.rqspfSingle, item.sp, item.letBall, match.sn, 'rqspfSp', item.name, match.mainTeam, match.guestTeam, match.week, '01')" class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+              {{item.name}} <span> {{item.sp}}</span></div>
+            <div class="soccer-let-boll" [ngClass]="match.letBall < 0 ? 'c-green' : 'c-red'">{{match.letBall}}</div>
+            <img src="./assets/images/danguan.png" class="soccer-shut" *ngIf="match.rqspfSingle == 1"/>
+
+          </div>
+        </div>
+        <div class="middle-btn more" [ngClass]="match['otherResult'] && match['otherResult']['length'] > 0 ? 'btn-active' : ''"  *ngIf="(match.spfSingle == -1 || match.rqspfSingle == -1) || match.spfOne !=1"
+             tappable (click)="presentProfileModal(index, i)" >{{match['otherResult'] && match['otherResult']['length'] > 0 ? match.otherResult : '更多玩法'}}</div>
+      </div>
+    </div>
+
+</div>
+</section>

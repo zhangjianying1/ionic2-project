@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      我
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <section class="realname-page">
+    <div class="title-header">
+      基本信息
+    </div>
+    <div class="">
+      <ul class="icon-list" icon-no>
+        <li class="react">
+          <span>用户名/手机号</span>
+          <span class="right-text" *ngIf="userData.mobile">{{userData.mobile | mobilellipsis}}</span>
+          <span class="right-text" *ngIf="!userData.mobile">{{userData.userName}}</span>
+        </li>
+        <li (click)="toOther('XGMM')" tappable class="react">
+          <span>修改密码</span>
+          <span class="right-text">******</span>
+          <i class="icon-more"></i>
+        </li>
+      </ul>
+    </div>
+    <div class="title-header">
+      实名认证
+    </div>
+    <div class="">
+      <ul class="icon-list" icon-no>
+        <li (click)="toOther('ZSXM')" tappable class="react" *ngIf="!userData.realName">
+          <span>真实姓名</span>
+          <i class="icon-more"></i>
+        </li>
+        <li class="react" *ngIf="userData.realName">
+          <span>真实姓名</span>
+          <span class="right-text">{{userData.realName}}</span>
+
+          <i class="icon-more"></i>
+        </li>
+        <li class="react">
+          <span>身份证号</span>
+          <span class="right-text">{{userData.cardCode}}</span>
+
+        </li>
+
+      </ul>
+    </div>
+    <div class="title-header">
+      银行卡信息
+    </div>
+    <div class="">
+      <ul class="icon-list" icon-no>
+        <li (click)="toOther('YH')" class="react" tappable *ngIf="!userData.bankCode">
+          <span>银行卡号</span>
+          <span class="right-text">{{userData.bankCode | card}}</span>
+          <i class="icon-more"></i>
+        </li>
+        <li class="react" *ngIf="userData.bankCode">
+          <span>银行卡号</span>
+          <span class="right-text">{{userData.bankCode | card}}</span>
+
+          <i class="icon-more"></i>
+        </li>
+        <li class="react">
+          <span>开户银行</span>
+          <span class="right-text">{{userData.bankName}}</span>
+        </li>
+
+      </ul>
+    </div>
+  </section>
+</ion-content>

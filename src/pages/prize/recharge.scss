@@ -1,0 +1,43 @@
+@import "../../theme/my.scss";
+
+
+
+
+
+/**
+充值
+*/
+
+.recharge-input{
+  padding: calculateSize(50px) calculateSize(40px) 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: calculateSize(140px);
+  right: 0
+
+}
+.recharge-btn{
+  padding: calculateSize(70px) calculateSize(50px) calculateSize(45px);
+}
+.recharge-tips{
+  dt{
+    line-height: calculateSize(50px);
+    font-size: calculateSize(28px);
+    color: #666;
+  }
+  dd{
+    font-size: calculateSize(24px);
+    color: #999;
+  }
+}
+//联系客服
+.concat-sevice{
+  width: 100%;
+  line-height: calculateSize(40px);
+  text-align: center;
+  font-size: calculateSize(24px);
+  color: #999;
+  position: fixed;
+  bottom: calculateSize(30px);
+}

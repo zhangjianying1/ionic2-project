@@ -1,0 +1,59 @@
+<section class="page-home" >
+  <div class="bonus-plus">
+    <div><img src="./assets/images/plus.bonus.png"/></div>
+    <div>将竞彩官方赔率再提升2%至7%，中奖额外
+      多拿<em class="c-red">7%</em>奖金</div>
+  </div>
+  <div *ngFor="let matchwrap of matchList; let index=index" class="soccer-item">
+    <div class="soccer-header" tappable (click)="toggleShow(index)" *ngIf="matchwrap.isPlusSp">
+      {{matchwrap.date}}
+      <span>共{{matchwrap.matchTotal}}场</span>
+      <div class="icon-more" [ngClass]="matchwrap.active ? 'open' : ''"></div>
+    </div>
+    <div class="soccer-body">
+
+      <div  *ngFor="let match of matchwrap.match; let i=index">
+        <div *ngIf="matchwrap.active" >
+          <div class="soccer-match" *ngIf="match.spfShow || match.rqspfShow">
+            <div class="soccer-number">
+              <div>
+                <i class="icon-game"></i>
+                {{match.key}} {{match.matchName}}<span class="pl-15">{{match.endTime}} 截止</span>
+              </div>
+            </div>
+            <img *ngIf="match.hasSelected" class="icon-bonus-plus" src="./assets/images/ic-jiajiang.png"/>
+            <div class="soccer-team" >
+              <div class="column">
+                <div class="soccer-name">{{match.mainTeam}}</div>
+                <div class="soccer-name">VS</div>
+                <div class="soccer-name">{{match.guestTeam}}</div>
+              </div>
+              <div class="column" *ngIf="match.spfShow">
+                <div *ngFor="let item of match.spfSp; let j=index"
+                     tappable
+                     (click)="selectResult(index, i, j, match.issue, match.spfSingle, item.sp, item.plusResult, match.sn, 'spfSp', item.name, match.mainTeam, match.guestTeam, match.week, '05', -1)"
+                     class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+                  <div class="row-content"><span>{{item.name}}</span><span>{{item.sp}}<em>+{{item.plus}}</em></span></div>
+                  <span>{{item.name}} {{item.plusResult }}</span>
+
+                </div>
+              </div>
+
+              <div class="column" *ngIf="match.rqspfShow">
+                <div *ngFor="let item of match.rqspfSp; let j=index"
+                     tappable
+                     (click)="selectResult(index, i, j, match.issue, match.rqspfSingle, item.sp, item.plusResult, match.sn, 'rqspfSp', item.name, match.mainTeam, match.guestTeam, match.week, '01', -1)"
+                     class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+                  <div class="row-content"><span>{{item.name}}</span><span>{{item.sp}}<em>+{{item.plus}}</em></span></div>
+                  <span>{{item.name}}  {{item.plusResult}}</span>
+                </div>
+                <div class="soccer-let-boll" [ngClass]="match.letBall < 0 ? 'c-green' : 'c-red'">{{match.letBall}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

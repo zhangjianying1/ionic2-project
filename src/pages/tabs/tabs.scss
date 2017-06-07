@@ -1,0 +1,65 @@
+// 投注icon
+.ion-ios-information-circle { background-image: url(../assets/images/ic-touzhu-pre.png) }
+.ion-md-information-circle, .ion-ios-information-circle-outline { background-image: url(../assets/images/ic-touzhu-normal.png) }
+// 大厅icon
+.ion-ios-home { background-image: url(../assets/images/ic-dating-pre.png)}
+.ion-ios-home-outline, .ion-md-home { background-image: url(../assets/images/ic-dating-normal.png) }
+
+// 比分 icon
+.ion-ios-information { background-image: url(../assets/images/ic-bifen-pre.png)}
+.ion-ios-information-outline, .ion-md-information { background-image: url(../assets/images/ic-bifen-normal.png) }
+
+// wo icon
+.ion-ios-contacts { background-image: url(../assets/images/ic-wo-pre.png)}
+.ion-ios-contacts-outline, .ion-md-contacts { background-image: url(../assets/images/ic-wo-normal.png) }
+// 底部
+.tabs .tabbar{
+  border-top:1px solid  #D2D5DE!important;
+  background-color: #fff;
+  .tab-button{
+    &:hover:not(.disable-hover){
+      .tab-button-text{
+        color: #FC5A65!important;
+      }
+      .ion-md-information-circle{
+        background-image: url(../assets/images/ic-touzhu-pre.png)
+      }
+      .ion-md-home{
+        background-image: url(../assets/images/ic-dating-pre.png)
+      }
+      .ion-md-information {
+        background-image: url(../assets/images/ic-bifen-pre.png)
+      }
+      .ion-md-contacts{ background-image: url(../assets/images/ic-wo-pre.png) }
+    }
+    &[aria-selected="true"]{
+      .tab-button-text{
+        color: #FC5A65!important;
+      }
+      .ion-md-information-circle{
+        background-image: url(../assets/images/ic-touzhu-pre.png)
+      }
+      .ion-md-home{
+        background-image: url(../assets/images/ic-dating-pre.png)
+      }
+      .ion-md-information {
+        background-image: url(../assets/images/ic-bifen-pre.png)
+      }
+      .ion-md-contacts{ background-image: url(../assets/images/ic-wo-pre.png) }
+    }
+    min-height: calculateSize(100px);
+    .tab-button-icon{
+      height: calculateSize(40px)!important;
+      width: calculateSize(40px)!important;
+      min-height: calculateSize(40px)!important;
+      min-width: calculateSize(40px)!important;
+      font-size: calculateSize(0px);
+      background-size: cover;
+    }
+    .tab-button-text{
+      margin-top: calculateSize(12px);
+      font-size: calculateSize(20px);
+      color: #B4B9C8;
+    }
+  }
+}

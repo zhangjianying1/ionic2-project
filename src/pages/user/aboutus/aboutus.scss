@@ -1,0 +1,8 @@
+.about-us{
+  padding: 0 calculateSize(40px);
+  font-size: calculateSize(28px);
+  p{
+    margin-top: calculateSize(50px);
+    color: #666;
+  }
+}

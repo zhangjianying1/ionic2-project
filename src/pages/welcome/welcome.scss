@@ -1,0 +1,28 @@
+ion-slide{
+  .slide-zoom{
+    position: relative;
+    img{
+      width: 100%;
+      height: auto;
+      vertical-align: middle;
+      display: inline-block;
+    }
+  }
+  button{
+    width: calculateSize(300px);
+    height: calculateSize(80px);
+    line-height: calculateSize(80px);
+    border: 1px solid #fff;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    bottom: calculateSize(80px);
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.20);
+    border-radius: 10px;
+    background-clip: border-box;
+    z-index: 12;
+  }
+}

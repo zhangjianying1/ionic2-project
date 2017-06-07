@@ -1,0 +1,22 @@
+<ion-header>
+  <soccer-tab (changed)="shut($event)"></soccer-tab>
+</ion-header>
+<ion-content scroll>
+  <ion-refresher (ionRefresh)="doRefersh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <div class="containers" [ngClass]="soccerService._programmeData.cross.len >= 1 ? 'p-b-plus': ''">
+
+    <section class="soccer-cont">
+      <div class="loading" *ngIf="!soccerService._soccerData.length">加载中...</div>
+      <soccer-item [matchList]="soccerService._soccerData" [selectResult]="selectResult.bind(this)" [toggleShow]="toggleShow.bind(this)" sign="multiple"></soccer-item>
+    </section>
+  </div>
+</ion-content>
+<take-tips [cross]="soccerService._programmeData.cross" [sign]="sign"></take-tips>
+

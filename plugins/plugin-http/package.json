@@ -1,0 +1,74 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+        "spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+        "type": "directory"
+      },
+      "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/node_modules"
+    ]
+  ],
+  "_from": "myPlugins/Http",
+  "_id": "caitong-Http@1.0.0",
+  "_inCache": true,
+  "_location": "/caitong-Http",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+    "spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+    "type": "directory"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "file:myPlugins/Http",
+  "_shasum": "3e90f432a03fd0a21007c0f050aed26ae789c2fd",
+  "_shrinkwrap": null,
+  "_spec": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/myPlugins/Http",
+  "_where": "/Users/zjy/Desktop/porduct/ionic2-lottery/com.icaimi/node_modules",
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/xu-li/cordova-plugin-wechat/issues"
+  },
+  "cordova": {
+    "id": "cordova-plugin-caitonghttp",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "dependencies": {},
+  "description": "A cordova plugin, a JS version of Wechat SDK",
+  "devDependencies": {},
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.5.0"
+    }
+  ],
+  "homepage": "https://github.com/xu-li/cordova-plugin-wechat#readme",
+  "keywords": [
+    "cordova",
+    "wechat",
+    "weixin",
+    "share",
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "license": "MIT",
+  "name": "caitong-Http",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "version": "1.0.0"
+}

@@ -1,0 +1,80 @@
+.my-tab{
+  .tabbar{
+    height: calculateSize(80px);
+    top: calculateSize(88px);
+    border-bottom: 1px solid #ccc;
+
+    .tab-button{
+
+      &[aria-selected='true']{
+        height: calculateSize(80px);
+        min-height: calculateSize(80px);
+        border-bottom: 1px solid $c-red;
+        .tab-button-text{
+          color: #333;
+        }
+      }
+      ion-icon{
+        display: none;
+      }
+      .tab-button-text{
+        color: #999;
+        font-size: calculateSize(30px);
+
+      }
+    }
+  }
+
+}
+//.ios{
+//  .my-cont{
+//    top: calculateSize(120px);
+//  }
+//}
+//.my-cont{
+//  top: calculateSize(80px);
+//}
+
+.pro-box{
+  background: #fff;
+  h3{
+    padding: 0 calculateSize(30px);
+    line-height: calculateSize(52px);
+    border-bottom: 1px solid #eee;
+    font-size: calculateSize(30px);
+    color: $c-red;
+  }
+  .column{
+    display: flex;
+    align-items: center;
+    padding: calculateSize(18px) calculateSize(30px) calculateSize(12px);
+    & > *{
+      flex: 1;
+      font-size: calculateSize(30px);
+    }
+    img{
+      flex: 0 calculateSize(74px);
+      height: calculateSize(74px);
+    }
+
+  }
+  .msg{
+    padding-left: calculateSize(12px);
+    font-size: calculateSize(30px);
+    h4{
+      font-size: calculateSize(30px);
+      padding-bottom: calculateSize(8px);
+    }
+    time{
+      font-size: calculateSize(24px);
+      color: #999;
+    }
+  }
+  .bonus-price{
+    flex: 0 auto;
+    font-size: calculateSize(30px);
+    color: #333;
+  }
+
+}
+

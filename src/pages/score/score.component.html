@@ -1,0 +1,54 @@
+
+
+    <div class="tab_score"  >
+
+        <ul>
+            <li class="tab_score_li" *ngFor="let week of weekShow; let j = index" [ngClass]="week.active == true ? 'active' : ''" (click)="change(week.date,j)" >{{week.name}}</li>
+        </ul>
+       <!-- <span class="tab_score_search"></span>-->
+
+    </div>
+
+    <ion-content scroll>
+    <div class="containers_score">
+
+            <ion-refresher (ionRefresh)="doRefresh($event)">
+                <ion-refresher-content
+                        pullingIcon="arrow-dropdown"
+                        pullingText="下拉刷新"
+                        refreshingSpinner="circles"
+                        refreshingText="加载中...">
+                </ion-refresher-content>
+            </ion-refresher>
+
+        <div class="content_score" *ngFor="let match of matchList"  >
+            <div class="sn_league_time">
+                <span><em class="em1">{{match.sn}} &nbsp;{{match.matchName}}</em> <img *ngIf="match.stateName=='进行中'" src="./assets/images/time.png" />  <em class="em2" *ngIf="match.stateName=='进行中'" >{{match.matchMinutes}} '</em> <em class="match_nsy" *ngIf="match.stateName=='未开赛'" >未开赛</em> <em class="match_finish"  *ngIf="match.stateName=='完场'" >完场</em> </span>
+            </div>
+
+            <div class="against">
+                <div class="team home">
+                    <div class="logo"><img *ngIf="match.mainTeamImg" src="{{match.mainTeamImg}}" /><img *ngIf="!match.mainTeamImg" src="./assets/images/default_logo.png" /></div>
+                    <div class="team_name">{{match.mainTeam}}</div>
+                </div>
+                <div class="goals"  *ngIf="match.stateName=='进行中' ||  match.stateName=='完场'  ">
+                    <h2>{{match.mainTeamGoals}} — {{match.guestTeamGoals}}</h2>
+                    <span *ngIf="match.mainTeamGoalsHalf !='-1' && match.guestTeamGoalsHalf!='-1'">半 {{match.mainTeamGoalsHalf}} — {{match.guestTeamGoalsHalf}}</span>
+                </div>
+                <div class="goals nsy" *ngIf="match.stateName=='未开赛'">
+                    <span>{{match.time}}开赛</span>
+                </div>
+
+                <div class="team away">
+                    <div class="logo"><img *ngIf="match.guestTeamImg" src="{{match.guestTeamImg}}" />
+                        <img *ngIf="!match.guestTeamImg" src="./assets/images/default_logo.png" /></div>
+                    <div class="team_name">{{match.guestTeam}}</div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    </ion-content>
+

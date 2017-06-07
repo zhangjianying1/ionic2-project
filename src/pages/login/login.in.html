@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <button (click)="closeHandle()"class="back-button disable-hover bar-button bar-button-md back-button-md bar-button-default bar-button-default-md show-back-button" ion-button="bar-button" ng-reflect-klass="back-button" ng-reflect-ng-class="back-button-md"><span class="button-inner"><ion-icon class="back-button-icon icon icon-md back-button-icon-md ion-md-arrow-back" role="img" ng-reflect-klass="back-button-icon" ng-reflect-ng-class="back-button-icon-md" aria-label="arrow back" ng-reflect-name="md-arrow-back"></ion-icon><span class="back-button-text back-button-text-md" ng-reflect-klass="back-button-text" ng-reflect-ng-class="back-button-text-md"></span></span><div class="button-effect"></div></button>
+
+    <ion-title>
+      登录
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <section class="login">
+
+    <div class="my-input">
+      <div class="input-label"><i class="icon-user"></i></div>
+      <ion-input type="text" placeholder="请输入用户名/手机号" [(ngModel)]="login.userName" clearInput required></ion-input>
+    </div>
+
+    <div class="my-input">
+      <div class="input-label"><i class="icon-password"></i></div>
+      <ion-input type="password" placeholder="请输入密码" [(ngModel)]="login.password" clearInput required></ion-input>
+    </div>
+    <div class="password-control column">
+      <div class="remember-password" (click)="checkHandle()"><i [ngClass]="login.isRemember ? 'icon-radio-small active' : 'icon-radio-small'"></i>记住密码</div>
+      <div  class="forget-password"><span (click)="forgetPassword()">忘记密码</span></div>
+    </div>
+    <div class="top-tips" *ngIf="isLock">您还可以登录一次,否则用户将被锁定</div>
+    <div class="login-btns">
+      <button class="big-btn " [ngClass]="login.userName && login.password ? 'btn-primary' : 'btn-disabled'" auto (click)="loginHandle()">登录</button>
+      <a (click)="goRegister()">注册</a>
+    </div>
+  </section>
+</ion-content>

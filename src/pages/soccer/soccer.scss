@@ -1,0 +1,203 @@
+@import '../../theme/my.scss';
+
+soccer-content ion-content{
+  top: calculateSize(124px);
+  .containers{
+    padding-bottom: calculateSize(114px);
+    &.p-b-plus{
+      padding-bottom: calculateSize(254px);
+    }
+  }
+}
+
+.platform-iphone soccer-content ion-content{
+  top: calculateSize(164px);
+  .containers{
+    padding-bottom: calculateSize(154px);
+    &.p-b-plus{
+      padding-bottom: calculateSize(254px);
+    }
+  }
+}
+  /* icon begin*/
+.icon-tag{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border: calculateSize(12px) solid #C0C0C0;
+  border-left-color: transparent!important;
+  border-top-color: transparent!important;
+  &.no-bor{
+    border:none;
+  }
+}
+.tag-box{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.tag-box.active{
+  border-color: $c-red;
+  color: $c-red;
+  background: #fff;
+}
+.tag-box.active .icon-tag{
+  border-color: $c-red;
+}
+/* icon end*/
+
+/* tab-header end*/
+
+/* 球队列表 begin*/
+
+.soccer-header{
+  height: calculateSize(80px);
+  padding: 0 calculateSize(30px);
+  position: relative;
+  line-height: calculateSize(80px);
+  font-size: 13px;
+  color: #353535;
+  background: #fff;
+  /* icon begin*/
+  .icon-more{
+    width: calculateSize(26px);
+    height: calculateSize(16px);
+    padding: 0!important;
+    position: absolute;
+    right: calculateSize(30px);
+    top: 50%;
+    transition: all .2s ease;
+    background-image: url(../assets/images/bt-zhankai.png);
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .icon-more.open{
+    transform: translateY(-50%) rotate(0deg);
+  }
+}
+.statement{
+  text-align: center;
+  font-size: 10px;
+  color: #666;
+  line-height: calculateSize(60px);
+  background: #FFE5DD;
+}
+
+.soccer-body{
+  padding-bottom: calculateSize(10px);
+  background: #fff;
+  .soccer-match{
+    position: relative;
+  }
+}
+.soccer-number{
+  display: flex;
+  height: calculateSize(58px);
+  line-height: calculateSize(58px);
+  background-color: #F4F4F4;
+  white-space: nowrap;
+  font-size: 12px;
+  color: #888;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+
+}
+.soccer-number .icon-game{
+  width: calculateSize(35px);
+  height: calculateSize(35px);
+  margin: calculateSize(10px) calculateSize(14px);
+  background-image: url('../assets/images/ic-bisai.png');
+  vertical-align: middle;
+}
+.soccer-team{
+  padding: calculateSize(36px) calculateSize(55px) calculateSize(30px);
+}
+.soccer-team .column{
+  justify-content: space-between;
+  position: relative;
+}
+.soccer-name{
+  flex: 1;
+  font-size: 15px;
+  color: #111;
+  line-height: calculateSize(42px);
+  white-space: nowrap;
+}
+.soccer-name:nth-child(1){
+  padding-right: calculateSize(50px);
+  text-align: right;
+}
+.soccer-name:nth-child(3){
+  padding-left: calculateSize(50px);
+}
+.soccer-name:nth-child(2){
+  flex: 0  calculateSize(40px);
+  color: #888;
+  font-size: 15px;
+  text-align: center;
+}
+.soccer-btn{
+  height: calculateSize(64px);
+  border: 1px solid #ccc;
+  margin-top: calculateSize(30px);
+  flex: 0 calculateSize(196px) !important;
+  border-radius: calculateSize(8px);
+  line-height: calculateSize(64px);
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  background-color: #fff;
+
+}
+.soccer-btn span{
+  font-size: calculateSize(24px);
+}
+.soccer-btn.active{
+  border-color: $c-red;
+  color: $c-red;
+  span{
+    font-size: calculateSize(30px);
+  }
+}
+
+.soccer-let-boll{
+  width: calculateSize(40px);
+  padding-top: calculateSize(40px);
+  position: absolute;
+  left: calculateSize(-50px);
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  text-align: right;
+}
+.soccer-shut{
+  width: calculateSize(40px);
+  height: calculateSize(64px);
+  position: absolute;
+  top: calculateSize(30px);
+  right: calculateSize(-42px);
+}
+.soccer-shut img{
+  width: calculateSize(46px);
+  height: calculateSize(64px);
+}
+.more{
+  width: auto;
+  padding: 0 calculateSize(50px);
+  margin: 0 calculateSize(55px) calculateSize(30px);
+  font-size: 15px;
+  background: #fff;
+  color: #666;
+  border-color: #ccc;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+/* 球队列表 end*/
+
+
+
+

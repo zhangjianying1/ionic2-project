@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>投注确认</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll>
+
+  <div class="take-confirm">
+    <section *ngFor="let matchWrap of pageData; let index=index" >
+
+      <div class="soccer-body" >
+
+        <div  *ngFor="let match of matchWrap.match; let i=index" >
+          <div *ngIf="match.staySPF || match.stayRQSPF || match.otherResult" [ngClass]="matchWrap.isPlusSp ? 'page-home' : ''">
+            <div class="soccer-number">
+              <div>
+                <i class="icon-game"></i>
+                {{match.key}} {{match.matchName}}<span class="pl-15">{{match.endTime}} 截止</span>
+              </div>
+            </div>
+
+            <div class="soccer-team">
+              <div class="column">
+                <div class="soccer-name">{{match.mainTeam}}</div>
+                <div class="soccer-name">VS</div>
+                <div class="soccer-name">{{match.guestTeam}}</div>
+              </div>
+              <div class="column" *ngIf="match.staySPF || (!isOnePass && !matchWrap.isPlusSp)">
+                <div *ngFor="let item of match.spfSp; let j = index"
+                     class="soccer-btn" [ngClass]="item.active ? 'active' : ''"
+                     tappable
+                     (click)="selectResult(index, i, j, match.issue, match.spfSingle, item.sp, item.plusResult, match.sn, 'spfSp', item.name, match.mainTeam, match.guestTeam, match.week, '05', matchWrap.isPlusSp)" class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+
+                  <div class="row-content" *ngIf="!item.active && matchWrap.isPlusSp"><span>{{item.name}}</span><span>{{item.sp}}<em>+{{item.plus}}</em></span></div>
+                  {{item.name}}  <span>{{item.plusResult ? item.plusResult : item.sp}}</span>
+                </div>
+              </div>
+              <div class="column" *ngIf="match.stayRQSPF || (!isOnePass && !matchWrap.isPlusSp)">
+                <div *ngFor="let item of match.rqspfSp; let j = index"
+                     class="soccer-btn" [ngClass]="item.active ? 'active' : ''"
+                     tappable
+                     (click)="selectResult(index, i, j, match.issue, match.rqspfSingle, item.sp, item.plusResult, match.sn, 'rqspfSp', item.name, match.mainTeam, match.guestTeam, match.week, '01', matchWrap.isPlusSp)" class="soccer-btn" [ngClass]="item.active ? 'active' : ''">
+
+                  <div class="row-content" *ngIf="!item.active && matchWrap.isPlusSp">
+                    <span>{{item.name}}</span><span>{{item.sp}}<em>+{{item.plus}}</em></span>
+                  </div>
+                  {{item.name}} <span> {{item.plusResult ? item.plusResult : item.sp}}</span>
+                </div>
+                <div class="soccer-let-boll" [ngClass]="match.letBall < 0 ? 'c-green' : 'c-red'">{{match.letBall}}</div>
+              </div>
+            </div>
+            <div class="middle-btn more"
+                 [ngClass]="match['otherResult'] && match['otherResult']['length'] > 0 ? 'btn-active' : ''"
+                 tappable
+                 (click)="presentProfileModal(index, i)"
+                 *ngIf="!matchWrap.isPlusSp" >{{match['otherResult'] && match['otherResult']['length'] > 0 ? match.otherResult : '更多玩法'}}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <soccer-footer [programmeData]="takeService._programmeData" [sign]="sign" [isOnePass]="isOnePass"></soccer-footer>
+
+</ion-content>

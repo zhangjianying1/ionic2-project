@@ -1,0 +1,37 @@
+<section>
+  <div class="tab">
+    <div class="tab-tit" [ngClass]="showPlay.active == 1 ? 'active' : ''" tappable (click)="toggleHandle(1)">{{matchName}}<div class="icon-tag"></div></div>
+    <div class="tab-tit" [ngClass]="showPlay.active == 2 ? 'active' : ''" tappable (click)="toggleHandle(2)">{{playName}}<div class="icon-tag"></div></div>
+
+  </div>
+  <div class="tab-mark" (click)="closeView()" tappable *ngIf="showPlay.active > 0" >
+    <div class="nav-cont" *ngIf="showPlay.active == 1 ">
+      <div class="nav-body">
+        <div *ngFor="let item of matchList; let i = index" class="middle-btn" [ngClass]="item.active ? '' : 'btn-default'"
+             (click)="filterEare(item.name, i);$event.stopPropagation();" >{{item.name}}</div>
+
+      </div>
+      <div class="nav-control">
+        <div radio-group>
+
+
+          <div *ngFor="let item of radioData; let i = index;">
+            <my-radio [name]="item.name" [checked]="item.checked" tappable (click)="radioHandle(item.name, i);$event.stopPropagation();"></my-radio>
+
+          </div>
+        </div>
+        <button class="middle-btn btn-primary" tappable (click)="getShut();$event.stopPropagation();">确定</button>
+      </div>
+    </div>
+    <div class="nav-cont second-nav"  *ngIf="showPlay.active == 2">
+      <div class="nav-body">
+
+        <div *ngFor="let item of playData" class="middle-btn" [ngClass]="item.active ? '' : 'btn-default'"
+             tappable
+             (click)="getShut(item.name, index);$event.stopPropagation();" >{{item.name}}</div>
+
+      </div>
+    </div>
+  </div>
+</section>
+

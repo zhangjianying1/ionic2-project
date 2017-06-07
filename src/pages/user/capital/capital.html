@@ -1,0 +1,106 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>资金明细</ion-title>
+  </ion-navbar>
+  <section class="tab-header">
+    <div (click)="tabSelect(0)" [ngClass]="index == 0 ? 'active': ''">全部</div>
+    <div (click)="tabSelect(1)" [ngClass]="index == 1 ? 'active': ''">投注</div>
+    <div (click)="tabSelect(2)" [ngClass]="index == 2 ? 'active': ''">充值</div>
+    <div (click)="tabSelect(3)" [ngClass]="index == 3 ? 'active': ''">提现</div>
+  </section>
+</ion-header>
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="加载中...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <section class="tab-cont">
+     <div *ngIf="index == 0">
+      <div class="nothing" *ngIf="state['0'].nothing">
+        您还没有相关数据
+      </div>
+      <div class="nothing" *ngIf="!state['0'].data">加载中...</div>
+      <section class="capital">
+        <div class="column" *ngFor="let item of state['0'].data; let index=index">
+          <div class="msg">
+            <h2>{{item.desc}}</h2>
+            <em>余额:¥ {{item.cashAmount}}</em>
+          </div>
+          <div class="price">
+            <time>{{item.createTime}}</time>
+            <em [ngClass]="item.changeAmount < 0 ? '': 'c-red'">{{item.changeAmount < 0 ? '-&nbsp;&nbsp;' : '+&nbsp;&nbsp;' }}¥ {{ item.changeAmount < 0  ? (item.changeAmount | clearFirst) : item.changeAmount }}元</em>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div *ngIf="index == 1">
+      <div class="nothing" *ngIf="state['1'].nothing">
+        您还没有相关数据
+      </div>
+      <div class="nothing" *ngIf="!state['1'].data">加载中...</div>
+      <section class="capital">
+        <div class="column" *ngFor="let item of state['1'].data; let index=index">
+          <div class="msg">
+            <h2>{{item.desc}}</h2>
+            <em>余额:¥ {{item.cashAmount}}</em>
+          </div>
+          <div class="price">
+            <time>{{item.createTime}}</time>
+            <em [ngClass]="item.changeAmount < 0 ? '': 'c-red'">{{item.changeAmount < 0 ? '-&nbsp;&nbsp;' : '+&nbsp;&nbsp;' }}¥ {{ item.changeAmount < 0  ? (item.changeAmount | clearFirst) : item.changeAmount }}元</em>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div *ngIf="index == 2">
+      <div class="nothing" *ngIf="state['2'].nothing">
+        您还没有相关数据
+      </div>
+      <div class="nothing" *ngIf="!state['2'].data">加载中...</div>
+      <section class="capital">
+
+        <div class="column" *ngFor="let item of state['2'].data; let index=index">
+          <div class="msg">
+            <h2>{{item.fillResourcesDesc}}</h2>
+            <em [ngClass]="item.status == 0 ? 'c-blue' : item.status == 2 ? 'c-red' : ''">{{item.statusDesc}}</em>
+
+          </div>
+          <div class="price">
+            <time>{{item.createTime}}</time>
+            <em class="c-red">+&nbsp;&nbsp;¥ {{item.amount}}元</em>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div *ngIf="index == 3">
+      <div class="nothing" *ngIf="state['3'].nothing">
+        您还没有相关数据
+      </div>
+      <div class="nothing" *ngIf="!state['3'].data">加载中...</div>
+      <section class="capital">
+        <div class="column" *ngFor="let item of state['3'].data; let index=index">
+          <div class="msg">
+            <h2>提现</h2>
+            <em [ngClass]="item.status == 0 ? 'c-blue' : item.status == 2 ? 'c-red' : ''">{{item.statusDesc}}</em>
+          </div>
+          <div class="price">
+            <time>{{item.createTime}}</time>
+            <em>-&nbsp;&nbsp;¥ {{item.amount}}元</em>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+  </section>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)" ionInfinite="8%" *ngIf="isFiniteScroll">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载中...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

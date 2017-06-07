@@ -1,0 +1,184 @@
+@import '../../theme/my.scss';
+ion-scroll{
+
+  height: 600px;
+}
+.tab_score{
+  display: flex;
+  justify-content: space-between;
+  padding: calculateSize(54px) 0 calculateSize(14px) 0;
+  background: $c-red;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 12;
+}
+.platform-iphone{
+  .tab_score{
+    padding-top: calculateSize(74px);
+  }
+  .containers_score{
+    padding-top: calculateSize(148px);
+  }
+}
+.tab_score ul{
+  display: block;
+}
+.tab_score li{
+  list-style: none;
+  flex: 0 calculateSize(300px);
+  height: calculateSize(60px);
+  line-height: calculateSize(60px);
+  text-align: center;
+  color: #fff;
+  width:calculateSize(60.75px);
+  margin-left: calculateSize(38px);
+  font-size: calculateSize(30px);
+  float: left;
+  position: relative;
+  white-space: nowrap;
+  &.active {
+    background: #fff;
+    height:calculateSize(60px);
+    line-height: calculateSize(60px);
+    border-radius: calculateSize(30px);
+    color: $c-red;
+  }
+}
+.tab_score_search{
+  background: url("../assets/images/sousuo.png") center no-repeat;
+  display: block;
+  float: right;
+  margin-right: calculateSize(30.5px);
+  width: calculateSize(38px);
+  background-size: cover;
+  height: calculateSize(38px);
+  margin-top: calculateSize(11px);
+
+}
+.containers_score{
+  padding-top: calculateSize(128px);
+}
+.content_score{
+  padding-bottom: calculateSize(20px);
+  border: calculateSize(1px) solid #E5E5E5;
+}
+.sn_league_time{
+  padding:calculateSize(30px) 0 calculateSize(20px) 0;
+  display: flex;
+  span{
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    height: calculateSize(44px);
+    line-height: calculateSize(44px);
+    background: #f4f4f4;
+    border-radius: calculateSize(24px);
+    padding-left:calculateSize(22px) ;
+    padding-right:calculateSize(23px) ;
+    .em1{
+      font-size: calculateSize(26px);
+      color: #888888;
+      float: left;
+      white-space: nowrap;
+    }
+    img{
+      width: calculateSize(24px);
+      float: left;
+      margin-left:  calculateSize(16px);
+      margin-top: calculateSize(10px);
+
+    }
+    .em2{
+      font-size: calculateSize(24px);
+      color: #FC5A65;
+      float: left;
+      margin-left: calculateSize(10px);
+    }
+    .match_nsy{
+      font-size: calculateSize(26px);
+      float: left;
+      color: #32A5F4;
+      margin-left: calculateSize(10px);
+    }
+    .match_finish{
+      font-size: calculateSize(26px);
+      color: #888888;
+      float: left;
+      margin-left: calculateSize(10px);
+    }
+  }
+}
+
+.against{
+  overflow: hidden;
+}
+
+.team{
+  float: left;
+  font-size:calculateSize(30px);
+  text-align: center;
+  color: #888888;
+  .team_name{
+    margin-top: calculateSize(4px);
+    line-height: calculateSize(42px);
+  }
+}
+.home{
+  .logo{
+    margin-left: calculateSize(126px);
+    width: calculateSize(100px);
+    height: calculateSize(100px);
+  }
+  .team_name{
+    width: calculateSize(282px);
+    margin-left: calculateSize(35px);
+  }
+}
+
+.logo{
+  background: url("../assets/images/biankuang.png") no-repeat center;
+  width: 100%;
+  background-size: cover;
+  img{
+    width: calculateSize(70px);
+    height: calculateSize(70px);
+    margin: calculateSize(15px) auto;
+  }
+}
+
+
+.away{
+  .logo{
+    width: calculateSize(100px);
+    height: calculateSize(100px);
+    margin-left: calculateSize(91px);
+  }
+  .team_name{
+    width:calculateSize(282px);
+
+  }
+}
+
+.goals{
+  float: left;
+  font-size: calculateSize(26px);
+  width: calculateSize(117px);
+  text-align: center;
+  margin-top: calculateSize(22px);
+  overflow: hidden;
+  h2{
+    font-size: calculateSize(40px);
+    color: #333333;
+    line-height: calculateSize(56px);
+  }
+  span{
+    color: #353535;
+    line-height: calculateSize(37px);
+  }
+}
+.nsy{
+  margin-top: calculateSize(32px);
+  white-space: nowrap;
+}
+

@@ -1,0 +1,61 @@
+/* 底部 view begin*/
+.fixed-bottom-view{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background: #fff;
+  z-index: 222224;
+}
+.bottom-view-header > div{
+  height: calculateSize(84px);
+  flex: 1;
+  padding: 0 calculateSize(30px);
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+  line-height: calculateSize(84px);
+  text-align: center;
+  font-size: 14px;
+  color: #353535;
+
+}
+.bottom-view-header > div:first-child{
+  font-size: 13px;
+  color: #888;
+}
+.bottom-view-header > div:nth-of-type(2) {
+  border: 1px solid #ccc;
+}
+
+.bottom-view-header .tag-box .icon-tag{
+  top: 0;
+  transform: rotate(-90deg);
+}
+.bottom-view-header .tag-box.active{
+  position: absolute;
+  width: calc(100% + 2px);
+  height: calc(100% + 2px );
+  left: -1px;
+  top: -1px;
+  border: 1px solid $c-red;
+  z-index: 4;
+}
+.bottom-view-body{
+  height: calculateSize(110px);
+  padding: 0 calculateSize(30px);
+}
+.bottom-view-body > div{
+  white-space: nowrap;
+}
+.bottom-view-body .price{
+  flex: 0 calculateSize(500px);
+  width: calculateSize(532px);
+  font-size: 13px;
+  color: #888;
+  line-height: calculateSize(38px);
+  overflow: hidden;
+}
+.bottom-view-body .price:last-child{
+  line-height: calculateSize(44px);
+}
+/* 底部 view end*/

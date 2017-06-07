@@ -1,0 +1,122 @@
+@import '../../theme/my.scss';
+
+.login{
+  padding: calculateSize(20px) calculateSize(40px);
+
+}
+.icon-user{
+  width: calculateSize(36px);
+  height: calculateSize(36px);
+  background-image: url(../assets/images/login/yonghu.png);
+}
+.icon-mobile{
+  width: calculateSize(30px);
+  height: calculateSize(42px);
+  background-image: url(../assets/images/login/shouji.png);
+}
+.icon-password{
+  width: calculateSize(30px);
+  height: calculateSize(40px);
+  background-image: url(../assets/images/login/mima.png);
+}
+.icon-repeat-password{
+  width: calculateSize(38px);
+  height: calculateSize(34px);
+  background-image: url(../assets/images/login/zaici.png);
+}
+.icon-code{
+  width: calculateSize(32px);
+  height: calculateSize(36px);
+  background-image: url(../assets/images/login/yanzheng.png);
+}
+.my-input{
+  display: flex;
+  align-items: center;
+  height: calculateSize(88px);
+  border: 1px solid #ccc;
+  border-radius: calculateSize(10px);
+  margin-top: calculateSize(30px);
+  position: relative;
+  .small-btn-160{
+    position: absolute;
+    top: calculateSize(14px);
+    right: calculateSize(20px);
+    background: #fff;
+    font-size: calculateSize(28px);
+  }
+}
+.input-label{
+  display: flex;
+  flex: 0 calculateSize(86px);
+  border-right: 1px solid #ccc;
+  align-items: center;
+  justify-content: center;
+  &[auto]{
+    flex: 0 auto;
+    padding: 0 calculateSize(30px);
+    font-size: calculateSize(30px);
+    color: #333;
+  }
+}
+ion-input{
+  flex: 1;
+  height: 100%;
+  input{
+    position: absolute;
+    top: 0;
+    padding-left: calculateSize(30px)!important;
+    color: #666!important;
+    font-size: calculateSize(30px);
+    &::-webkit-input-placeholder{
+      color: #bbb;
+      font-size: calculateSize(30px);
+
+    }
+    &:invalid .text-input-clear-icon{
+      display: block!important;
+    }
+  }
+
+}
+.text-input-clear-icon{
+  top: calculateSize(6px);
+}
+/* 记住密码 */
+.password-control{
+  padding: calculateSize(10px);
+  & > div {
+    flex: 1;
+  }
+}
+.icon-radio-small{
+  width: calculateSize(32px);
+  height: calculateSize(32px);
+  margin-right: calculateSize(10px);
+  background-image: url(../assets/images/login/weigouxuan.png);
+
+  &.active{
+    background-image: url(../assets/images/login/gouxuan.png);
+  }
+}
+.remember-password{
+
+  font-size: 14px;
+  color: #999;
+
+}
+.forget-password{
+  text-align: right;
+  font-size: calculateSize(28px);
+  color: #32A5F4;
+}
+
+.login-btns{
+  padding-top:calculateSize(80px);
+  text-align: center;
+  a{
+    line-height: calculateSize(120px);
+    font-size: calculateSize(38px);
+    color: #666;
+
+  }
+}

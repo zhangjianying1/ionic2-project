@@ -1,0 +1,37 @@
+@import '../../../theme/my.scss';
+.radio, .checkbox{
+  display: flex;
+  margin-right: calculateSize(30px);
+  align-items: center;
+  font-size: 17px;
+  color: #333;
+  white-space: nowrap;
+}
+.radio i, .checkbox i{
+  margin-right: calculateSize(10px);
+}
+
+//.soccer-checkbox div{
+//  display: -webkit-box;
+//  display: box;
+//  height: .2rem;
+//  margin-right: .25rem;
+//  -webkit-box-align: center;
+//  box-align: center;
+//  color: #7D718E;
+//
+//}
+.radio-default{
+  display: block;
+  width: calculateSize(46px);
+  height: calculateSize(46px);
+  margin-right: .05rem;
+  border: 1px solid #C9C9C9;
+  border-radius: 50%
+}
+.radio-active{
+  @extend .radio-default;
+  border-color: #FB4D1B;
+  background-image: url(../assets/images/xuanzhong.png);
+  background-size: cover;
+}

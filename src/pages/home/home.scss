@@ -1,0 +1,87 @@
+@import '../../theme/my.scss';
+.soccer-item{
+  position: relative;
+  overflow: hidden;
+}
+.b-50 .scroll-content{
+  padding-bottom: calculateSize(100px)!important;
+}
+.ad-h{
+  height: calculateSize(280px);
+}
+.bonus-plus{
+  display: flex;
+  min-height: calculateSize(82px);
+  padding: calculateSize(10px) calculateSize(40px) calculateSize(10px) calculateSize(46px);
+  border-bottom: 1px solid #f4f4f4;
+  color: #333;
+  align-items: center;
+  font-size: calculateSize(30px);
+  div:nth-of-type(1){
+    padding: calculateSize(10px) calculateSize(10px) calculateSize(10px) 0;
+    flex: 0 calculateSize(204px);
+    border-right: 1px solid #ddd;
+    img{
+      width: calculateSize(190px);
+      height: calculateSize(30px);
+    }
+  }
+  div:nth-last-of-type(1){
+    flex: 1;
+    width: calculateSize(200px);
+    padding-left: calculateSize(10px);
+    font-size: calculateSize(24px);
+    line-height: calculateSize(34px);
+  }
+}
+.icon-bonus-plus{
+  width: calculateSize(60px);
+  height: calculateSize(70px);
+  position: absolute;
+  top: calculateSize(14px);
+  left: calculateSize(40px);
+  z-index: 1;
+}
+.page-home{
+  .soccer-btn{
+    position: relative;
+    height: calculateSize(90px);
+    overflow: hidden;
+    font-size: calculateSize(30px);
+    span{
+      font-size: calculateSize(30px);
+    }
+    &.active{
+      line-height: calculateSize(90px);
+      color: $c-red;
+      font-size: 15px;
+      .row-content {
+        display: none;
+      }
+    }
+  }
+  .row-content{
+    width: 100%;
+    padding-top: calculateSize(6px);
+    position: absolute;
+    z-index: 1;
+    background: #fff;
+    span{
+      display: block;
+      text-align: center;
+      &:first-child{
+        line-height: calculateSize(42px);
+        font-size: 15px;
+        color: #666;
+      }
+      &:last-child{
+        font-size: 12px;
+        line-height: calculateSize(34px);
+        text-align: center;
+        em{
+          color: $c-red;
+        }
+      }
+    }
+  }
+}

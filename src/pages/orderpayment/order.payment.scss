@@ -1,0 +1,83 @@
+@import "../../theme/my.scss";
+.order-payment{
+  padding-bottom: calculateSize(140px);
+}
+.card{
+
+  padding:0 calculateSize(32px);
+  .card-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    h2{
+      padding-left: calculateSize(8px);
+      margin: 0;
+      flex: 1;
+      line-height: calculateSize(75px);
+
+      font-size: calculateSize(32px);
+      color: #333;
+    }
+    span{
+      font-size: calculateSize(30px);
+
+    }
+  }
+
+}
+.o-c-list{
+  padding: calculateSize(10px);
+  & > div{
+    font-size: calculateSize(30px);
+    line-height: calculateSize(60px);
+    color: #999;
+
+  }
+  span:first-child{
+    display: inline-block;
+    width: calculateSize(148px);
+  }
+}
+.o-c-options{
+  padding: calculateSize(10px);
+  .column{
+    align-items: flex-start;
+    span {
+      &:first-child {
+        flex: 0 calculateSize(132px);
+      }
+      &:nth-of-type(2) {
+        flex: 1;
+      }
+      &:last-child {
+        flex: 0 calculateSize(200px);
+      }
+      em{
+        display: block;
+      }
+      .c-f3{
+        font-size: 12px;
+      }
+    }
+  }
+  dt{
+    border-bottom: 1px dashed #eee;
+    margin-bottom: calculateSize(10px);
+    color: #b2b2b2;
+    font-size: calculateSize(26px);
+    line-height: calculateSize(74px);
+
+  }
+  dd{
+    padding: calculateSize(10px) 0 0;
+    line-height: calculateSize(42px);
+    color: #999;
+    font-size: calculateSize(30px);
+    align-items: flex-start;
+
+  }
+}
+.bg-box{
+  background: #F4F4F4;
+  min-height: calculateSize(20px);
+}

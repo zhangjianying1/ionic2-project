@@ -1,0 +1,19 @@
+<div *ngIf="takeService._programmeData.multiple.active">
+  <div class="bottom-mark" (touchmove)="touchMoveHandle($event);$event.preventdefault();" (click)="closeView()"></div>
+  <div class="fixed-bottom-multiple" >
+    <div class="multiple-list">
+      <div *ngFor="let item of multiple; let index=index" [ngClass]="item.active ? 'small-btn' : 'small-btn btn-default'"
+           (click)="selectMultiple(item.name, index)">{{item.name}}倍</div>
+
+    </div>
+    <div class="number-keyboard">
+
+      <div *ngFor="let item of [1,2,3,4,5,6,7,8,9]" (click)="selectMultiple(item)">{{item}}</div>
+      <div class="icon-del-back" (click)="deleteNumber()">
+        <img src="./assets/images/keyboard/delete.png"/>
+      </div>
+      <div (click)="selectMultiple(0)">0</div>
+      <div class="confirm-btn" (click)="selectMultiple()">确认</div>
+    </div>
+  </div>
+</div>

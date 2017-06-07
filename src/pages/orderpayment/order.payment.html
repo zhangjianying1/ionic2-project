@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      订单确认
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content scroll>
+  <div class="order-payment">
+    <section class="card" *ngIf="programmeData">
+      <div class="card-header"><h2>订单信息</h2></div>
+      <div>
+        <div class="o-c-list">
+          <div>
+            <span>玩&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;法:</span>
+             <span>
+            {{programmeData.playId == '10' ? '混合过关' : programmeData.playId == '01' ? '让球胜平负'
+            : programmeData.playId == '02' ? '总进球'
+            : programmeData.playId == '03' ? '半全场'
+            : programmeData.playId == '04' ? '比分' : programmeData.playId == '05' ? '胜平负' : ''}}
+          </span>
+          </div>
+          <div>
+            <span>过关方式:</span>
+
+             <span>
+              {{programmeData.cross.name}}
+            </span>
+          </div>
+          <div>
+            <span>注&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</span><span>{{programmeData.item}}</span>
+          </div>
+          <div>
+            <span>投注倍数:</span><span>{{programmeData.multiple.name}}</span>
+          </div>
+          <div>
+            <span>投注金额:</span><span class="c-red">¥ {{programmeData.bonus.amount}}</span>
+          </div>
+          <div>
+            <span>预计奖金:</span><span class="c-red">¥ {{programmeData.bonus.bonus}}</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <div class="bg-box"></div>
+    <section class="card">
+      <div class="card-header"><h2>投注内容</h2></div>
+      <div>
+        <dl class="o-c-options">
+          <dt class="column">
+            <span>场次</span>
+            <span>对阵</span>
+            <span>选项</span>
+          </dt>
+          <dd  *ngFor="let match of orderData">
+            <div >
+              <div class="column" >
+                <span>{{match.week}}{{match.sn}}</span>
+                <span>{{match.mainTeam  | strellipsis:5}}VS{{match.guestTeam | strellipsis:5}}</span>
+              <span>
+                <div *ngFor="let itemList of match.resultList">
+                  <em *ngFor="let item of itemList.termList">{{itemList.sign == 'rqspfSp' ? '让球' : ''}}{{item.termName}}<span class="c-f3"> {{item.plusResult || item.sp}}</span></em>
+                </div>
+              </span>
+              </div>
+            </div>
+          </dd>
+        </dl>
+      </div>
+    </section>
+  </div>
+
+  <section class="fixed-b-btns">
+    <button class="btn-primary" (click)="paymentHandle()" tappable>支付</button>
+  </section>
+</ion-content>
